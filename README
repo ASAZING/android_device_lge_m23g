@@ -1,0 +1,38 @@
+# Build
+
+* TWRP
+
+
+* BUILD
+        
+        # source build/envsetup.sh
+        
+        # lunch cm_m23g-eng
+
+* recoveries
+
+        # . build/tools/device/makerecoveries.sh cm_m23g-eng
+    
+        # mka bootimage
+
+* full build
+
+        # brunch cm_m23g-eng
+
+* FACEBOOK 
+
+# https://www.facebook.com/TeamPantherDevelopers/
+
+# MTK
+
+Few words about mtk related binaries, services and migration peculiarities.
+
+# Limitations
+
+Services requires root:
+
+`system/core/rootdir/init.rc`
+
+  * surfaceflinger depends on sched_setscheduler calls, unable to change process priority from 'system' user (default user 'system')
+
+  * mediaserver depends on /data/nvram folder access, unable to do voice calls from 'media' user (default user 'media')
